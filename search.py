@@ -34,7 +34,7 @@ def get_search_results(query):
     query_encoded = requests.utils.quote(query)
     print(f"Query: '{query}'")
     response = requests.get(
-        f'https://api.case.law/v1/cases/?page_size=3&search={query_encoded}&jurisdiction=vt&court=vt&decision_date_min=1970',
+        f'https://api.case.law/v1/cases/?page_size=5&search={query_encoded}&jurisdiction=vt&court=vt&decision_date_min=1970',
         headers={'Authorization': f'Token {case_law_api_key}'}
     )
     search_results = response.json()
@@ -44,3 +44,4 @@ def get_search_results(query):
         print(f"Result {i + 1}: {result['name']}")    
 
     return search_results
+
