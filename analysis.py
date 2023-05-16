@@ -7,7 +7,11 @@ import requests
 
 def get_relevance_scores(prompt, parentheticals):
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    
+
+    # Check if there are any parentheticals
+    if not parentheticals:
+        return []
+
     # Join all parentheticals into a single string, each separated by a newline
     all_parentheticals = "\n".join(f"Case text: \"{p}\"." for p in parentheticals)
 
@@ -25,7 +29,7 @@ def get_relevance_scores(prompt, parentheticals):
     scores_text = response.choices[0].text.strip().split("\n")
 
     # Extract only digits from each score and convert to int
-    scores = [int(''.join(filter(str.isdigit, score_text))) for score_text in scores_text if any(char.isdigit() for char in score_text)]
+    scores = [int(''.join(filter(str.isdigit, score_text))) if score_text.isdigit() else 0 for score_text in scores_text]
 
     return scores
 
@@ -45,8 +49,13 @@ def filter_and_rank_cases(prompt, search_results):
             pin_cites = cite.get('pin_cites', [])
             parentheticals = [pin_cite.get('parenthetical') for pin_cite in pin_cites if pin_cite.get('parenthetical')]
 
+            print(f"Case: {case['name']}, Parentheticals: {parentheticals}")  # Debug print
+
+            # Limit to the first 3 parentheticals
+            parentheticals = parentheticals[:5]
+
             if parentheticals:
-                scores = get_relevance_scores(prompt, parentheticals[:3])  # Limit to the first 3 parentheticals
+                scores = get_relevance_scores(prompt, parentheticals)
 
                 for parenthetical, score in zip(parentheticals, scores):
                     # Consider a parenthetical helpful only if the score is between 7 and 10 (inclusive)
@@ -61,10 +70,10 @@ def filter_and_rank_cases(prompt, search_results):
                         formatted_citation = f"{case['name_abbreviation']}, {official_cite} ({case['decision_date'][:4]})" if official_cite else ''
 
                         case_infos.append({
-                            'case_name': case['name_abbreviation'],
-                            'citation': formatted_citation,
-                            'helpful_parenthetical': parenthetical
-                        })
+                        'case_name': case['name_abbreviation'],
+                        'citation': formatted_citation,
+                        'helpful_parenthetical': parenthetical
+                    })
 
     # Debugging line: print the number of values to return
     print(f"Returning {len(results)} ranked cases and {len(case_infos)} case info items.")
