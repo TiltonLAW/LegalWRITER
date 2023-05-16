@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>Scholar Assistant</title>
+    <style>
+
+      body {
+        background-color: rgb(35, 40, 43);
+        color: white;
+        font-family: sans-serif;
+
+      }
+
+      .title {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+    width: 100%;
+        margin: 45%;
+        margin-top: 1%;
+        font-size: 1.5em;
+        color:bisque;
+        }
+
+      .chat {
+        margin: 20%;
+        margin-top:30%;
+      }
+
+      .input-container {
+        display: flex;
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+      }
+
+      .input-field {
+        flex: 1;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 2px;
+        margin-right: 5px;
+        border: none;
+        background-color: #333;
+        color: white;
+        outline: none;
+      }
+
+    .input-field:focus, input:focus{
+      outline: none;
+      }
+
+    .submit-button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        
+      }
+
+
+    .output-question {
+
+      padding: 10px;
+      color: #ccc;
+      background-color: rgb(23, 31, 36);
+  }
+
+    .output-container {
+
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #fff;
+     
+  }
+
+  @keyframes typing {
+    0% {
+        content: ".";
+    }
+    33% {
+        content: "..";
+    }
+    66% {
+        content: "...";
+    }
+    100% {
+        content: "....";
+    }
+}
+
+.typing-indicator::after {
+    content: " ";
+    animation: typing 1s linear infinite;
+    }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="title">gpt-3 + harvard law</div>
+    
+<div class="chat">
+<div id="output-container" class="output-container waiting"></div>
+
+    <form onsubmit="event.preventDefault();">
+      <div class="input-container">
+        <input type="text" id="input-field" class="input-field" placeholder="Enter your query here" />
+      </div>
+      <button id="submit-button" class="submit-button">Submit</button>
+    </form>
+
+    
+    <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
+</div>
+  </body>
+</html>
