@@ -21,7 +21,7 @@ This module analyzes the search results in more detail. It checks parenthetical 
 
 This module generates the final output, which is a response to the legal question. It uses OpenAI's GPT model to generate a response based on the case information and the initial prompt. The generated response is then returned to the Flask application.
 
-## _
+## 
 
 The system is designed to work in a conversational manner, which means it processes the input question, conducts a search, analyzes the results, and generates a response all in the context of a conversation.
 
