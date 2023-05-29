@@ -1,4 +1,7 @@
 # LegalWRITER
+
+![Alt AI Lawyer](https://www.amazon.com/photos/shared/su1BKeRbRZWlo4cHB357Xw.NH25Pt99f2bXkdyvfbrzjQ/gallery/OOuPyARMRvSCfaxVxfh_kQ)
+
 ### GPT-3.5-turbo + LangChain + Harvard Law's Case Access Project is your new legal writting assistant.
 
 The purpose of the program outlined in these files is to create a legal research assistant. It uses OpenAI's GPT-3 model to interact with a user and perform relevant legal research. The program can take a question from a user, create a search query, retrieve relevant cases, filter them, generate helpful summaries, and respond with a comprehensive and understandable explanation of relevant law with proper citations.
