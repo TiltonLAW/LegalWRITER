@@ -14,10 +14,6 @@ This is the main Flask application. It creates a web server that listens for req
 
 This module handles the initial search for legal cases. It first uses OpenAI's GPT model to generate a legal query term based on the input prompt. It then uses the case.law to search Harvard Law School's Case Access Project (CAP) database for relevant legal cases. The search results are returned as JSON.
 
-## langchain.py: 
-
-This module processes the search results using LangChain, a text similarity search library. It uses LangChain's Language Model Mediator (LLM) and ConversationChain to create a conversational context and process the search results. It then splits the case texts into smaller chunks and indexes them for similarity search. It ranks the cases based on their similarity to the query.
-
 ## analysis.py: 
 
 This module analyzes the search results in more detail. It checks parenthetical elements in the case meta data of each case, then extracts the citation and case name. It then calculates a relevance score for each chunk using OpenAI's GPT model. The relevance score is used to rank the cases. It also extracts helpful quotes from the cases and returns those as part of the case information.
