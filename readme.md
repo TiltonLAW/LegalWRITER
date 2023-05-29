@@ -1,8 +1,5 @@
 <p align="center">
-  
   # LegalWRITER
-
-
 <img src="https://i.imgur.com/trmipRit.png"/>
 </p>
 
