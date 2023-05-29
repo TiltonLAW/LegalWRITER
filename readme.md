@@ -1,6 +1,6 @@
 # LegalWRITER
 
-![Alt AI Lawyer](https://www.amazon.com/photos/shared/su1BKeRbRZWlo4cHB357Xw.NH25Pt99f2bXkdyvfbrzjQ/gallery/OOuPyARMRvSCfaxVxfh_kQ)
+![Alt AI Lawyer](https://imgur.com/trmipRi)
 
 ### GPT-3.5-turbo + LangChain + Harvard Law's Case Access Project is your new legal writting assistant.
 
