@@ -7,7 +7,7 @@
 
 The purpose of the program outlined in these files is to create a legal research assistant. It uses OpenAI's GPT-3 model to interact with a user and perform relevant legal research. The program can take a question from a user, create a search query, retrieve relevant cases, filter them, generate helpful summaries, and respond with a comprehensive and understandable explanation of relevant law with proper citations.
 
-You will need the following accounts to use this application:
+You will need the following accounts and their associated APIs to use this application:
 
 ### OpenAI
 https://platform.openai.com/signup
