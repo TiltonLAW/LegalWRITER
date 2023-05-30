@@ -9,10 +9,10 @@ The purpose of the program outlined in these files is to create a legal research
 
 You will need the following accounts to use this application:
 
-###OpenAI
+### OpenAI
 https://platform.openai.com/signup
 
-###Case Access Project
+### Case Access Project
 https://case.law/user/register/
 
 ## app.py: 
