@@ -7,6 +7,14 @@
 
 The purpose of the program outlined in these files is to create a legal research assistant. It uses OpenAI's GPT-3 model to interact with a user and perform relevant legal research. The program can take a question from a user, create a search query, retrieve relevant cases, filter them, generate helpful summaries, and respond with a comprehensive and understandable explanation of relevant law with proper citations.
 
+You will need the following accounts to use this application:
+
+###OpenAI
+https://platform.openai.com/signup
+
+###Case Access Project
+https://case.law/user/register/
+
 ## app.py: 
 
 This is the main Flask application. It creates a web server that listens for requests. The '/' route serves the main index.html page, and the '/submit' route takes a legal question as input, uses the other modules to find and analyze relevant legal cases, and then generates a response to the question.
