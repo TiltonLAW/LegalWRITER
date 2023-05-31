@@ -31,10 +31,16 @@ This module analyzes the search results in more detail. It checks parenthetical 
 
 This module generates the final output, which is a response to the legal question. It uses OpenAI's GPT model to generate a response based on the case information and the initial prompt. The generated response is then returned to the Flask application.
 
-## 
+## Summarize.py
+
+This module will provide the option for the end-user to get a summary of the cases which were used in the answer.  The summary will be created with chatGPT and will br broken into chunks, ingested, and then summarized.  I have not tested this file yet, but the basic princible works on openai.com with chatGPT-3.  This will be the final component of the web app.
+
+##
 
 The system is designed to work in a conversational manner, which means it processes the input question, conducts a search, analyzes the results, and generates a response all in the context of a conversation.
 
 According to ChatGPT, "This program represents a significant step in legal tech, offering a conversational interface for legal research that could save legal professionals considerable time. It showcases the utility of AI in parsing large amounts of legal data and delivering relevant, synthesized, and actionable insights."
 
-This is a work in progress but it is functional.  Improvements over LawSCHOLAR include use of gpt-3.5-turbo and CAP which finds more relevant cases than google scholar.  They are ranked for relevance and not popularity.  Prompts still need to be engineered better and performace should be improved to give faster results. The webUI should get updated to allow for other search filters, e.g. other jurisdictions, currently only serves Vermont. JavaScript needs to be updated to allow paragraph breaks. Finally, the server should be replaced with a deployment server (wsgi) rather than the development server (FLASK).  The final task will be to create a case summary function to generate case summaries for use in legal writing.  The goal is to make a useful tool to speed up legal research and writing for lawyers. Of course, the lawyer will need to check the work, but the hope is that it will save time by generating useful content.
+This is a work in progress but it is functional.  Improvements over LawSCHOLAR include use of gpt-3.5-turbo and CAP which finds more relevant cases than google scholar.  They are ranked for relevance and not popularity.  Prompts still need to be engineered better and performace should be improved to give faster results. The webUI should get updated to allow for other search filters, e.g. other jurisdictions, currently only serves Vermont. JavaScript needs to be updated to allow paragraph breaks. 
+
+The final task will be to create a case summary function to generate case summaries for use in legal writing.  The goal is to make a useful tool to speed up legal research and writing for lawyers. Of course, the lawyer will need to check the work, but the hope is that it will save time by generating useful content.  Finally, the server should be replaced with a deployment server (wsgi) rather than the development server (FLASK). 
