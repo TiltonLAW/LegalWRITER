@@ -1,121 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" />
-    <title>Scholar Assistant</title>
-    <style>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-      body {
-        background-color: rgb(35, 40, 43);
-        color: white;
-        font-family: sans-serif;
+    <title>AI-Law</title>
+<style>
 
-      }
-
-      .title {
-        position: fixed;
-        top: 0;
-        z-index: 999;
-    width: 100%;
-        margin: 40%;
-        margin-top: 1%;
-        font-size: 1.5em;
-        color:bisque;
-        }
-
-      .chat {
-        margin: 20%;
-        margin-top:30%;
-      }
-
-      .input-container {
-        display: flex;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border: none;
-      }
-
-      .input-field {
-        flex: 1;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 2px;
-        margin-right: 5px;
-        border: none;
-        background-color: #333;
-        color: white;
-        outline: none;
-      }
-
-    .input-field:focus, input:focus{
-      outline: none;
-      }
-
-    .submit-button {
-        padding-left: 10px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        
-      }
-
-
-    .output-question {
-
-      padding: 10px;
-      color: #ccc;
-      background-color: rgb(23, 31, 36);
-  }
-
-    .output-container {
-
-      padding-top: 10px;
-      padding-bottom: 10px;
-      color: #fff;
-     
-  }
-
-  @keyframes typing {
-    0% {
-        content: ".";
-    }
-    33% {
-        content: "..";
-    }
-    66% {
-        content: "...";
-    }
-    100% {
-        content: "....";
-    }
-}
-
-.typing-indicator::after {
-    content: " ";
-    animation: typing 1s linear infinite;
-    }
-
-    </style>
+</style>
   </head>
+
   <body>
-    
+
     <div class="title">gpt-3 + harvard's cap</div>
-    
-<div class="chat">
-<div id="output-container" class="output-container waiting"></div>
 
-    <form onsubmit="event.preventDefault();">
-      <div class="input-container">
-        <input type="text" id="input-field" class="input-field" placeholder="Enter your query here" />
-      
-      <button id="submit-button" class="submit-button">>></button></div>
-    </form>
+    <div class="tooltip">instructions
+      <span class="tooltiptext">Enter a legal question and the search query to search in case.law.  If you leave it blank, the AI will create a term for you but the results may not be as good.  <br><br> After the AI does the research, you can ask for summaries of the cases it researched.  It is likely a best practice to break down your legal writing project into small parts to get useful content from the AI.</span>
+    </div>
 
-    
-    <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
-</div>
+    <div class="chat">
+      <div id="output-container" class="output-container waiting"></div>
+      <div id="outputDiv"></div>
+      <form onsubmit="event.preventDefault();">
+        <div class="input-container">
+          <input type="text" id="input-field" class="input-field" placeholder="Enter your legal question here..." />
+          <input type="text" id="query-field" class="input-field" placeholder="Enter your legal research search query here, i.e. exclusionary rule..." />
+          <button id="submit-button" class="submit-button">>></button>
+        </div>
+      </form>
+      <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
+    </div>
+
   </body>
-</html>
+
+  </html>
+  

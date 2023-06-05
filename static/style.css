@@ -1,0 +1,189 @@
+ body {
+        background-color: rgb(35, 40, 43);
+        color: white;
+        font-family: sans-serif;
+
+      }
+
+      .title {
+        position: fixed;
+        top: 0;
+        text-align: center;
+        z-index: 999;
+        width: 100%;
+        padding-left: 40%;
+        padding: 1%;
+        padding-right: 40%;
+        font-size: 1.5em;
+        color:bisque;
+        background-color: rgb(23, 31, 36);
+        }
+
+      .chat {
+        margin: 10%;
+        margin-top:30%;
+      }
+
+      .input-container {
+        flex: 1;
+        display:grid;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+      }
+
+      .input-field, textarea {
+        flex: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        min-width: 69%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 2px;
+        margin: 5px;
+        border: none;
+        background-color: #333;
+        color: white;
+        outline: none;
+      }
+
+      .query-field, textarea {
+        flex: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 2px;
+        margin: 5px;
+        border: none;
+        background-color: #333;
+        color: rgb(211, 211, 211);
+        outline: none;
+      }
+
+
+    .input-field:focus, .query-field:focus, input:focus, textarea:focus{
+      outline: none;
+      background-color: #333;
+      color: rgb(211, 211, 211);
+      }
+
+    .submit-button {
+      grid-row-start: 2;
+      grid-row-end: 2;
+        width: 7%;
+        padding-left: 10px;
+        background-color: #36a83a;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 6.9px;
+        margin: 5px;
+        
+      }
+
+
+    .output-question {
+
+      padding: 10px;
+      color: #ccc;
+      background-color: rgb(23, 31, 36);
+  }
+
+    .output-container {
+      padding: 15%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #fff;
+     
+  }
+
+  @keyframes typing {
+    0% {
+        content: ".";
+    }
+    33% {
+        content: "..";
+    }
+    66% {
+        content: "...";
+    }
+    100% {
+        content: "....";
+    }
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 10;
+  color: rgb(193, 201, 121);
+  visibility: visible;
+  top: 7%;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 360px;
+  background-color: black;
+  color: #dfcfff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  text-align: left;
+  margin: 7px;
+  padding: 17px;
+  background-color: rgb(8, 19, 26);
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.typing-indicator::after {
+    content: " ";
+    animation: typing 1s linear infinite;
+    }
+
+    input {
+      color-scheme: dark;
+    }
+
+    
+a:link {
+  color: rgb(70, 236, 111);
+}
+
+a:visited {
+  color: rgb(151, 253, 151);
+}
+
+a:hover {
+  color: rgb(65, 163, 62);
+}
+
+a:active {
+  color: rgb(109, 156, 129);
+}
+
+button {
+  background-color: #141212; /* Dark background */
+  color: rgb(31, 31, 128); /* Blue text */
+  border: none;
+  padding: 3px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px; /* Rounded edges */
+  transition-duration: 0.4s; /* Transition effect */
+}
+
+button:hover {
+  background-color: #141212; /* Blue background on hover */
+  color:  rgb(31, 31, 178); /* Lighter blue text on hover */
+}
