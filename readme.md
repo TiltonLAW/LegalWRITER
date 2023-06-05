@@ -6,7 +6,7 @@
 ### GPT-3.5-turbo + Harvard Law's Case Access Project 
 -is your new legal writting assistant.
 
-The purpose of the program outlined in these files is to create a legal research assistant. It uses OpenAI's GPT-3 model to interact with a user and perform relevant legal research. The program can take a question from a user, create a search query, retrieve relevant cases, filter them, generate helpful summaries, and respond with a comprehensive and understandable explanation of relevant law with proper citations.
+The purpose of the program outlined in these files is to create a legal research assistant. It uses OpenAI's GPT-3 model to interact with a user and perform relevant legal research. The program can take a question from a user, create a search query, retrieve relevant cases, filter them, generate helpful summaries, and respond with a comprehensive and understandable explanation of relevant law with proper citations.  Finally, it will create a case summary for youfor the cases cited.
 
 You will need the following accounts and their associated APIs to use this application:
 
@@ -32,7 +32,7 @@ This module analyzes the search results in more detail. It checks parenthetical 
 
 This module generates the final output, which is a response to the legal question. It uses OpenAI's GPT model to generate a response based on the case information and the initial prompt. The generated response is then returned to the Flask application.
 
-## Summarize.py
+## Summarizer.py
 
 This module will provide the option for the end-user to get a summary of the cases which were used in the answer.  The summary will be created with chatGPT and will br broken into chunks, ingested, and then summarized.  I have not tested this file yet, but the basic princible works on openai.com with chatGPT-3.  This will be the final component of the web app.
 
